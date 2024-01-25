@@ -52,7 +52,7 @@ def timedisplay():
     formatted_date = current_datetime.strftime("%Y-%m-%d")
     print(Fore.YELLOW + "Current Date:", formatted_date)
 
-print("Version 7")
+print("Version 1")
 timedisplay()
 
 def helpmenu():
