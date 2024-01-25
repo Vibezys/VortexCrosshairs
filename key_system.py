@@ -26,17 +26,17 @@ def Nuke_em():
 
 def keyboard_logo():
     print()
-    print(Fore.LIGHTRED_EX + ",---,---,---,---,---,---,---,---,---,---,---,---,---,-------, ")
-    print(Fore.LIGHTRED_EX + "|1/2| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | + | ' | <-    | ")
-    print(Fore.LIGHTRED_EX + "|---'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-----| ") 
-    print(Fore.LIGHTRED_EX + "| ->| | Q | W | E | R | T | Y | U | I | O | P | ] | ^ |     | ")
-    print(Fore.LIGHTRED_EX + "|-----',--',--',--',--',--',--',--',--',--',--',--',--'|    | ")
-    print(Fore.LIGHTRED_EX + "| Caps | A | S | D | F | G | H | J | K | L | \ | [ | * |    | ")
-    print(Fore.LIGHTRED_EX + "|----,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'---'----| ")
-    print(Fore.LIGHTRED_EX + "|    | < | Z | X | C | V | B | N | M | , | . | - |          | ")
-    print(Fore.LIGHTRED_EX + "|----'-,-',--'--,'---'---'---'---'---'---'-,-'---',--,------| ")
-    print(Fore.LIGHTRED_EX + "| ctrl |  | alt |                          |altgr |  | ctrl | ")
-    print(Fore.LIGHTRED_EX + "'------'  '-----'--------------------------'------'  '------' ")
+    print(Fore.LIGHTRED_EX + " ,---,---,---,---,---,---,---,---,---,---,---,---,---,-------, ")
+    print(Fore.LIGHTRED_EX + " |1/2| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | + | ' | <-    | ")
+    print(Fore.LIGHTRED_EX + " |---'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-----| ") 
+    print(Fore.LIGHTRED_EX + " | ->| | Q | W | E | R | T | Y | U | I | O | P | ] | ^ |     | ")
+    print(Fore.LIGHTRED_EX + " |-----',--',--',--',--',--',--',--',--',--',--',--',--'|    | ")
+    print(Fore.LIGHTRED_EX + " | Caps | A | S | D | F | G | H | J | K | L | \ | [ | * |    | ")
+    print(Fore.LIGHTRED_EX + " |----,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'---'----| ")
+    print(Fore.LIGHTRED_EX + " |    | < | Z | X | C | V | B | N | M | , | . | - |          | ")
+    print(Fore.LIGHTRED_EX + " |----'-,-',--'--,'---'---'---'---'---'---'-,-'---',--,------| ")
+    print(Fore.LIGHTRED_EX + " | ctrl |  | alt |                          |altgr |  | ctrl | ")
+    print(Fore.LIGHTRED_EX + " '------'  '-----'--------------------------'------'  '------' ")
     print()
 
 def prankem():
@@ -52,23 +52,24 @@ def timedisplay():
     formatted_date = current_datetime.strftime("%Y-%m-%d")
     print(Fore.YELLOW + "Current Date:", formatted_date)
 
-print("Version 2")
+print("Version 3")
 timedisplay()
 
 def updatemenu():
     print()
-    print(Fore.MAGENTA + "This is where update logs are placed")
-    print(Fore.MAGENTA + "------------------------------------")
-    print(Fore.MAGENTA + "Added Updates to menu. Nothing else ")
-    print(Fore.MAGENTA + "too noteable. Small bug fixes.      ")
-    print(Fore.MAGENTA + "------------------------------------")
+    print(Fore.MAGENTA + "--------------------------------------")
+    print(Fore.MAGENTA + "This is where update logs are placed  ")
+    print(Fore.MAGENTA + "--------------------------------------")
+    print(Fore.MAGENTA + "Fixed bugs, added new commands to for ")
+    print(Fore.MAGENTA + "Credits option. Nothing else added.   ")
+    print(Fore.MAGENTA + "--------------------------------------")
 
 def helpmenu():
     print()
     print(Fore.MAGENTA + "Commands: ")
     print(Fore.MAGENTA + "START VCSD: Start, start, Start VCSD, start vcsd")
     print(Fore.MAGENTA + "UPDATES: Updates, updates, Update, update, Upt, upt")
-    print(Fore.MAGENTA + "CREDITS: Credits, credits, cred")
+    print(Fore.MAGENTA + "CREDITS: Credits, credits, creds, cred")
     print(Fore.MAGENTA + "CONFIG: Config, config, conf")
     print(Fore.MAGENTA + "HELP: Help, help, hel")
     print(Fore.MAGENTA + "EXIT: Exit, exit")
@@ -147,7 +148,7 @@ while True:
         updatemenu()
     elif choice in ["Config", "config", "conf",]:
         edit_config()
-    elif choice in ["Credits", "credits", "cred"]:
+    elif choice in ["Credits", "credits", "creds", "cred"]:
         print()
         print(Fore.CYAN + "Made by Vibezys")
         print("GITHUB: https://github.com/Vibezys")
