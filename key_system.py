@@ -52,13 +52,22 @@ def timedisplay():
     formatted_date = current_datetime.strftime("%Y-%m-%d")
     print(Fore.YELLOW + "Current Date:", formatted_date)
 
-print("Version 1")
+print("Version 2")
 timedisplay()
+
+def updatemenu():
+    print()
+    print(Fore.MAGENTA + "This is where update logs are placed")
+    print(Fore.MAGENTA + "------------------------------------")
+    print(Fore.MAGENTA + "Added Updates to menu. Nothing else ")
+    print(Fore.MAGENTA + "too noteable. Small bug fixes.      ")
+    print(Fore.MAGENTA + "------------------------------------")
 
 def helpmenu():
     print()
     print(Fore.MAGENTA + "Commands: ")
     print(Fore.MAGENTA + "START VCSD: Start, start, Start VCSD, start vcsd")
+    print(Fore.MAGENTA + "UPDATES: Updates, updates, Update, update, Upt, upt")
     print(Fore.MAGENTA + "CREDITS: Credits, credits, cred")
     print(Fore.MAGENTA + "CONFIG: Config, config, conf")
     print(Fore.MAGENTA + "HELP: Help, help, hel")
@@ -119,6 +128,7 @@ save_key(key, 'key.txt')
 while True:
     print(Fore.GREEN + "\nMenu:")
     print(Fore.GREEN + "[+] Start VCSD")
+    print(Fore.GREEN + "[+] Updates")
     print(Fore.GREEN + "[+] Credits")
     print(Fore.GREEN + "[+] Config")
     print(Fore.GREEN + "[+] Help")
@@ -133,6 +143,8 @@ while True:
             print()
             print("Valid lifetime key")
             display_crosshair()
+    elif choice in ["Updates", "updates", "Update", "update", "Upt", "upt"]:
+        updatemenu()
     elif choice in ["Config", "config", "conf",]:
         edit_config()
     elif choice in ["Credits", "credits", "cred"]:
