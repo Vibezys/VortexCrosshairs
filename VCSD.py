@@ -1,33 +1,9 @@
-import time
-import colorama
-import uuid
-import datetime
-import random
 import sys
 import os
+import subprocess
 import pygetwindow as gw
 from PyQt5 import QtCore, QtGui, QtWidgets
-from colorama import Fore, Back, Style
-from datetime import datetime, timedelta
-from time import sleep
-
-# Function to edit configuration
-def edit_config():
-    global R, G, B, ctype
-
-    # Get new values from the user or any other source
-    print()
-    new_R = int(input(Fore.MAGENTA + "Enter new R value: "))
-    new_G = int(input(Fore.MAGENTA + "Enter new G value: "))
-    new_B = int(input("Enter new B value: "))
-    new_ctype = int(input(Fore.MAGENTA + "Enter new Crosshair Type (1 or 2): "))
-
-    # Update the global variables
-    R, G, B, ctype = new_R, new_G, new_B, new_ctype
-
-    # Update the configuration file
-    with open("config.ini", "w") as f:
-        f.write("[RGB]\n[R]\n{}\n[G]\n{}\n[B]\n{}\n\n[Other]\n[Crosshair Type]\n{}\n".format(R, G, B, ctype))
+from colorama import Fore
 
 if os.path.exists("config.ini") == False:
     f = open("config.ini", "w")
@@ -60,6 +36,7 @@ ctype = f.readline()
 R = int(R)
 G = int(G)
 B = int(B)
+transparency = 0.0
 ctype = int(ctype)
 
 def display_crosshair():
@@ -78,6 +55,20 @@ def display_crosshair():
 
             self.move(
                 QtWidgets.QApplication.desktop().screen().rect().center() - self.rect().center() + QtCore.QPoint(1, 1))
+
+            self.vcsd_process = None  # Variable to store the VCSD.py process
+
+        # these are not needed, the process will be started and stopped from the main script
+        # def run_start_process(self):
+        #     if self.vcsd_process is None or self.vcsd_process.poll() is not None:
+        #         # Start VCSD.py only if it's not already running or has terminated
+        #         self.vcsd_process = subprocess.Popen(["python", "VCSD.py"])
+
+        # def stop_vcsd_process(self):
+        #     if self.vcsd_process is not None and self.vcsd_process.poll() is None:
+        #         #Terminate VCSD.py if it's currently running
+        #         self.vcsd_process.terminate()
+        #         self.vcsd_process = None
 
         def paintEvent(self, event):
             ws = self.ws
@@ -106,16 +97,8 @@ def display_crosshair():
     widget.show()
 
     # Get the active game window
-    game_window_title = "Your Game Window Title"  # Replace with the actual title of your game window
-    game_window = gw.getWindowsWithTitle(game_window_title)
-
-    if game_window:
-        game_window = game_window[0]
-        game_window.activate()  # Bring the game window to the front
-
-        # Position the crosshair over the game window
-        widget.move(game_window.left + (game_window.width - widget.width()) // 2,
-                    game_window.top + (game_window.height - widget.height()) // 2)
+    screen_rect = QtWidgets.QApplication.desktop().screen().rect()
+    widget.move(screen_rect.center() - widget.rect().center())
 
     sys.exit(app.exec_())
 if __name__ == '__main__':
